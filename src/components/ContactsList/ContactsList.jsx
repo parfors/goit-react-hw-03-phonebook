@@ -1,7 +1,7 @@
 import { ListStyled, ContactItem } from 'components';
 import PropTypes from 'prop-types';
 
-export const ContactsList = ({ contacts, onBtnDelet }) => {
+export const ContactsList = ({ contacts, onBtnDelete }) => {
   return (
     <>
       <ListStyled>
@@ -10,7 +10,7 @@ export const ContactsList = ({ contacts, onBtnDelet }) => {
             key={id}
             name={name}
             number={number}
-            onBtnDelet={() => onBtnDelet(id)}
+            onBtnDelete={() => onBtnDelete(id)}
           />
         ))}
       </ListStyled>
@@ -20,5 +20,5 @@ export const ContactsList = ({ contacts, onBtnDelet }) => {
 
 ContactsList.propTypes = {
   contacts: PropTypes.array,
-  onBtnDelet: PropTypes.func,
+  onBtnDelete: PropTypes.func,
 };

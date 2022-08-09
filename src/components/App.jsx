@@ -49,9 +49,9 @@ export class App extends Component {
   };
 
   formSubmitHandler = data => {
-    const normilizedData = data.name.toLowerCase();
+    const normalizedData = data.name.toLowerCase();
     if (
-      this.state.contacts.some(el => el.name.toLowerCase() === normilizedData)
+      this.state.contacts.some(el => el.name.toLowerCase() === normalizedData)
     ) {
       alert(`${data.name} is already in contacts`);
       return;
@@ -71,9 +71,9 @@ export class App extends Component {
 
   render() {
     const { contacts, filter, color } = this.state;
-    const normilizedFilter = filter.toLowerCase();
+    const normalizedFilter = filter.toLowerCase();
     const visibleContacts = contacts.filter(el =>
-      el.name.toLowerCase().includes(normilizedFilter)
+      el.name.toLowerCase().includes(normalizedFilter)
     );
 
     return (
@@ -85,7 +85,7 @@ export class App extends Component {
           <Filter value={filter} onChange={this.filterChangeHandler} />
           <ContactsList
             contacts={visibleContacts}
-            onBtnDelet={this.deleteContact}
+            onBtnDelete={this.deleteContact}
           />
           <RadioInput onChangeBtn={this.radioBtnChangeHandler} />
         </SectionStyled>

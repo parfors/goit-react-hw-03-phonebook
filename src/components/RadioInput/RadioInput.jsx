@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { InputRadioStyled, LabeleRadio } from 'components';
+import { InputRadioStyled, LabelRadio } from 'components';
 import PropTypes from 'prop-types';
 
 export class RadioInput extends Component {
@@ -30,7 +30,7 @@ export class RadioInput extends Component {
   render() {
     return (
       <>
-        <LabeleRadio>
+        <LabelRadio>
           <InputRadioStyled
             name="color"
             type="radio"
@@ -39,8 +39,8 @@ export class RadioInput extends Component {
             value="green"
           />
           Green
-        </LabeleRadio>
-        <LabeleRadio>
+        </LabelRadio>
+        <LabelRadio>
           <InputRadioStyled
             name="color"
             type="radio"
@@ -49,8 +49,8 @@ export class RadioInput extends Component {
             value="red"
           />
           Red
-        </LabeleRadio>
-        <LabeleRadio>
+        </LabelRadio>
+        <LabelRadio>
           <InputRadioStyled
             name="color"
             type="radio"
@@ -59,7 +59,7 @@ export class RadioInput extends Component {
             value="grey"
           />
           Grey
-        </LabeleRadio>
+        </LabelRadio>
       </>
     );
   }

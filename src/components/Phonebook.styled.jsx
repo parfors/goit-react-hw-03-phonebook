@@ -65,7 +65,7 @@ export const InputRadioStyled = styled.input`
   margin-right: 10px;
 `;
 
-export const LabeleRadio = styled(LabelStyled)`
+export const LabelRadio = styled(LabelStyled)`
   justify-content: flex-start;
 `;
 

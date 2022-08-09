@@ -9,26 +9,26 @@ import { Component } from 'react';
 
 export class ContactItem extends Component {
   state = {
-    agreenment: false,
+    agreement: false,
   };
 
   onChangeBox = data => {
     this.setState({
-      agreenment: !this.state.agreenment,
+      agreement: !this.state.agreement,
     });
   };
 
   render() {
-    const { name, number, onBtnDelet } = this.props;
+    const { name, number, onBtnDelete } = this.props;
     return (
       <>
         <ListItem>
           <ParagraphStyled>Name: {name}</ParagraphStyled>
-          <ParagraphStyled>Nubmer: {number}</ParagraphStyled>
+          <ParagraphStyled>Number: {number}</ParagraphStyled>
           <CheckBoxInput onChange={this.onChangeBox} />
           <ButtonDeleteStyled
-            disabled={!this.state.agreenment}
-            onClick={onBtnDelet}
+            disabled={!this.state.agreement}
+            onClick={onBtnDelete}
             type="button"
           >
             Delete
@@ -42,5 +42,5 @@ export class ContactItem extends Component {
 ContactItem.propTypes = {
   name: PropTypes.string,
   number: PropTypes.string,
-  onBtnDelet: PropTypes.func,
+  onBtnDelete: PropTypes.func,
 };
