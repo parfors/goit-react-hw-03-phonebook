@@ -17,7 +17,7 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    color: 'red',
+    color: '',
   };
 
   componentDidUpdate(prevProp, prevState) {
@@ -32,7 +32,11 @@ export class App extends Component {
   componentDidMount() {
     const localStorageData = JSON.parse(localStorage.getItem('contacts'));
     if (localStorageData) {
-      this.setState(JSON.parse(localStorage.getItem('contacts')));
+      const localData = JSON.parse(localStorage.getItem('contacts'));
+      this.setState({
+        contacts: localData.contacts,
+        color: localData.color,
+      });
     }
   }
 

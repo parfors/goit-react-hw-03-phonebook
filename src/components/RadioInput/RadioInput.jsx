@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export class RadioInput extends Component {
   state = {
-    color: 'red',
+    color: '',
   };
   onChange = event => {
     this.setState({
@@ -12,6 +12,16 @@ export class RadioInput extends Component {
     });
     this.props.onChangeBtn(event.currentTarget.value);
   };
+
+  componentDidMount() {
+    const localStorageData = JSON.parse(localStorage.getItem('contacts'));
+    if (localStorageData) {
+      const localData = JSON.parse(localStorage.getItem('contacts'));
+      this.setState({
+        color: localData.color,
+      });
+    }
+  }
 
   static propTypes = {
     onChange: PropTypes.func,
@@ -27,7 +37,7 @@ export class RadioInput extends Component {
             checked={this.state.color === 'green'}
             onChange={this.onChange}
             value="green"
-          />{' '}
+          />
           Green
         </LabeleRadio>
         <LabeleRadio>
